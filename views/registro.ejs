@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/public/styles.css">
+</head>
+
+<body id="registro">
+
+  <nav>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/index2">Clientes</a></li>
+      <li><a href="/membresias">Membresias</a></li>
+      <li style="background-color: #111"><a href="/registro">Registro</a></li>
+    </ul>
+  </nav>
+
+      <form action="/submit-form" method="post" class="mb-3" action="/views/index2.ejs">
+        <label for="tipo">Tipo de Membresía:</label>
+		  <select id="tipo" name="membresia">
+			<option value="Basica">Basica</option>
+			<option value="Premium">Premium</option>
+		  </select>
+        <br>
+		  <label for="inicio">Fecha de Inicio:</label>
+		  <input type="date" id="inicio" name="inicio">
+		  <br>
+		  <label for="vencimiento">Fecha de Vencimiento:</label>
+		  <input type="date" id="vencimiento" name="vencimiento">
+		  <br>
+		  <label for="costo">Costo:</label>
+		  <input type="number" id="costo" name="costo">
+		  <br>
+		  <label for="id_cliente">ID Cliente:</label>
+		  <select id="tipo" name="id_cliente">
+            <%rowsClientes.forEach(clientes => {%>
+              <option value="<%=clientes.id_cliente %>"><%=clientes.id_cliente %></option>
+            <%})%>
+          </select>
+		  <br>
+		  <input type="submit" value="Enviar">
+      </form>
+      <br><br>
+      
+</body>
+</html>

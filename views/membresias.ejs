@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    
+</head>
+<body id="membresias">
+
+    <nav>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/index2">Clientes</a></li>
+          <li style="background-color: #111"><a href="/membresias">Membresias</a></li>
+          <li><a href="/registro">Registro</a></li>
+        </ul>
+      </nav>
+
+    
+    <div class="contenedor">
+
+        <%rowsMembresia.forEach(membresia => {%>
+
+        <div class="card">
+
+            <figure>
+                <img src="/public/img.png" alt="" height="190px">
+            </figure>
+
+            <div class="contenido">
+                <h3>Membresia ID: <%=membresia.id_membresia%></h3>
+                <p>Tipo: <%=membresia.tipo_membresia %></p>
+                <p>Costo: <%=membresia.costo %></p>
+                <p>Fecha Inicio: <%=membresia.fecha_inicio%></p>
+                <p>Cliente ID: <%=membresia.id_cliente%></p>
+                <a href="#">Leer mas...</a>
+
+            </div>
+
+        </div>
+
+        
+        <%})%>
+
+    </div>
+
+      
+</body>
+</html>

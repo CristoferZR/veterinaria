@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding: 0;
+    
+}
+body {
+	
+    background-size: 100%;
+
+}
+
+#index2{
+    background-color: #111;
+}
+
+#index{
+    background-image: url('https://static.nationalgeographicla.com/files/styles/image_3200/public/01-dog-personalities-nationalgeographic_1421978.jpg?w=1600&h=900');
+}
+
+#membresias{
+    background-color: #2fb4cc;
+}
+
+#registro{
+    background-color: #c72929;
+}
+.contenedor{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 50px;
+}
+.card{
+    width: 300px;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    cursor: default;
+    transition : all 400ms ease;
+    position: relative;
+}
+.card:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+.card img{
+    width: 100%;
+}
+.card .contenido{
+    padding: 15px;
+    text-align: center;
+}
+.card .contenido p{
+    line-height: 1.5;
+    color: #6a6a6a
+}
+.card .contenido h3{
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.card .contenido a{
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin-top: 10px;
+    color: #2fb4cc;
+    border: 1px solid #2fb4cc;
+    border-radius: 4px;
+    transition: all 400ms ease;
+}
+.card .contenido a:hover{
+    background: #2fb4cc;
+    color:#fff;
+}
+
+
+nav {
+    background-color: #104582;
+    overflow: hidden;
+    position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+
+  }
+  
+  nav li {
+    float: left;
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 40px;
+    text-decoration: none;
+  }
+  
+  nav li a:hover {
+    background-color: #111;
+  }
+  h1{
+    font-size: 30px;
+    text-align: center;
+    margin-top: 100px;
+  }
+
+  
+
+h1 {
+	text-align: center;
+	margin-top: 50px;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+	margin: 70px auto;
+	padding: 20px;
+	max-width: 500px;
+    background-color: orange;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+label {
+	display: block;
+	margin-top: 10px;
+}
+
+select,
+input[type="date"],
+input[type="number"],
+input[type="text"] {
+	display: block;
+	margin-top: 5px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	background-color: #f2f2f2;
+    text-align: center;
+}
+
+input[type="submit"] {
+	display: block;
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #4CAF50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #3e8e41;
+}
