@@ -1,4 +1,4 @@
- const port = process.env.port || 3000
+ const PORT = process.env.PORT || 3000
 
  const DB_HOST = process.env.DB_HOST || 'localhost'
  const DB_USER = process.env.DB_USER || 'cris'
@@ -84,5 +84,6 @@ app.post('/submit-form', (req, res) => {
 
   app.use(express.static(__dirname));
 
-  app.listen(port)
-   
+  app.listen(PORT);
+  
+  () => console.log('SERVICE'+PORT); 
