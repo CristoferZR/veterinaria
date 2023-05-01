@@ -14,11 +14,11 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 
 const conexion = mysql.createConnection({
-    host : DB_HOST,
-    user : DB_USER,
-    password : DB_PASS,
-    database : DB_NAME,
-    port: DB_PORT
+    host : 'containers-us-west-3.railway.app',
+    user : 'root',
+    password : 'Z0IrCQO03tvyMf6Tm4NX',
+    database : 'railway',
+    port: '6770'
 })
 
 const router = express.Router();
