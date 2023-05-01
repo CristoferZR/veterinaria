@@ -37,7 +37,7 @@ app.get('/membresias', (req, res) => {
       if (!error) {
         console.log(rowsMembresia);
         
-            res.render('membresias', { rowsMembresia });
+            res.render('membresias', {rowsMembresia});
           }
         });
       }
@@ -78,12 +78,10 @@ app.post('/submit-form', (req, res) => {
   
     conexion.query(query, (error, results) => {
       if (error) throw error;
-      res.redirect('/index2');
+      res.redirect('/membresias');
     });
   });
 
   app.use(express.static(__dirname));
 
   app.listen(PORT);
-  
-  () => console.log('SERVICE'+PORT); 
