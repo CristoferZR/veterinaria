@@ -16,7 +16,7 @@ const Connection = require('mysql2/typings/mysql/lib/Connection')
 
 app.listen(DB_PORT);
 
-const conexion = await mysql.createConnection({
+const conexion = mysql.createConnection({
     host : DB_HOST,
     user : DB_USER,
     password : DB_PASS,
