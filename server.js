@@ -1,4 +1,4 @@
- const PORT = process.env.PORT || 3000
+
 
  const DB_HOST = process.env.DB_HOST || 'localhost'
  const DB_USER = process.env.DB_USER || 'cris'
@@ -12,13 +12,16 @@ const mysql  = require('mysql2');
 const app =  express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
+const Connection = require('mysql2/typings/mysql/lib/Connection')
 
-const conexion = mysql.createConnection({
-    host : 'containers-us-west-3.railway.app',
-    user : 'root',
-    password : 'Z0IrCQO03tvyMf6Tm4NX',
-    database : 'railway',
-    port: '6770'
+app.listen(DB_PORT);
+
+const conexion = await mysql.createConnection({
+    host : DB_HOST,
+    user : DB_USER,
+    password : DB_PASS,
+    database : DB_NAME,
+    port: DB_PORT
 })
 
 const router = express.Router();
@@ -31,11 +34,16 @@ conexion.connect((error) => {
   }
 });
 
-app.get('/membresias', (req, res) => {
-    conexion.query('SELECT * FROM membresia', (error, rowsMembresia) => {
-      if (error) throw error;
-      if (!error) {
-        console.log(rowsMembresia);
+
+
+app.get('/membresias', async (req, res) => {
+
+          const conecction = await conexion.getConnection()
+
+          await conecction.query('SELECT * FROM membresia', (error, rowsMembresia) => {
+          if (error) throw error;
+          if (!error) {
+          console.log(rowsMembresia);
         
             res.render('membresias', {rowsMembresia});
           }
@@ -43,8 +51,11 @@ app.get('/membresias', (req, res) => {
       }
     );
 
-  app.get('/registro',(req,res,)=>{
-    conexion.query('SELECT * FROM clientes', (error, rowsClientes) => {
+  app.get('/registro', async (req,res,)=>{
+
+    const conecction = await conexion.getConnection()
+
+     await conecction.query('SELECT * FROM clientes', (error, rowsClientes) => {
         if (error) throw error;
         if (!error) {
           console.log(rowsClientes);
@@ -55,8 +66,11 @@ app.get('/membresias', (req, res) => {
 
   });
   
-  app.get('/index2',(req,res,)=>{
-    conexion.query('SELECT * FROM clientes', (error, rows) => {
+  app.get('/index2', async (req,res,)=>{
+
+    const conecction = await conexion.getConnection()
+
+    connection.query('SELECT * FROM clientes', (error, rows) => {
         if (error) throw error;
         if (!error) {
           console.log(rows);
@@ -83,5 +97,3 @@ app.post('/submit-form', (req, res) => {
   });
 
   app.use(express.static(__dirname));
-
-  app.listen(PORT);
