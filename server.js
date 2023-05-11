@@ -14,7 +14,6 @@ const ejs = require('ejs');
 const bodyParser = require('body-parser');
 
 
-
 const conexion = mysql.createConnection({
     host : DB_HOST,
     user : DB_USER,
@@ -36,14 +35,11 @@ conexion.connect((error) => {
 });
 
 
-
 app.get('/membresias', (req, res) => {
 
           conexion.query('SELECT * FROM membresia', (error, rowsMembresia) => {
           if (error) throw error;
           if (!error) {
-          console.log(rowsMembresia);
-        
             res.render('membresias', {rowsMembresia});
           }
         });
@@ -52,13 +48,9 @@ app.get('/membresias', (req, res) => {
 
   app.get('/registro',(req,res,)=>{
 
-    
-
      conexion.query('SELECT * FROM clientes', (error, rowsClientes) => {
         if (error) throw error;
         if (!error) {
-          console.log(rowsClientes);
-          
           res.render('registro', { rowsClientes });
         }
       });
@@ -70,8 +62,6 @@ app.get('/membresias', (req, res) => {
     conexion.query('SELECT * FROM clientes', (error, rows) => {
         if (error) throw error;
         if (!error) {
-          console.log(rows);
-          
           res.render('index2', { rows });
         }
       });
