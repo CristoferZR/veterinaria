@@ -1,4 +1,4 @@
-
+const PORT = process.env.PORT || 3000
 
  const DB_HOST = process.env.DB_HOST || 'localhost'
  const DB_USER = process.env.DB_USER || 'cris'
@@ -12,9 +12,8 @@ const mysql  = require('mysql2');
 const app =  express();
 const ejs = require('ejs');
 const bodyParser = require('body-parser');
-const Connection = require('mysql2/typings/mysql/lib/Connection')
 
-app.listen(DB_PORT);
+
 
 const conexion = mysql.createConnection({
     host : DB_HOST,
@@ -23,6 +22,8 @@ const conexion = mysql.createConnection({
     database : DB_NAME,
     port: DB_PORT
 })
+
+app.listen(PORT);
 
 const router = express.Router();
 
