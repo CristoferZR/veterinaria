@@ -36,11 +36,9 @@ conexion.connect((error) => {
 
 
 
-app.get('/membresias', async (req, res) => {
+app.get('/membresias', (req, res) => {
 
-          const conecction = await conexion.getConnection()
-
-          await conecction.query('SELECT * FROM membresia', (error, rowsMembresia) => {
+          conexion.query('SELECT * FROM membresia', (error, rowsMembresia) => {
           if (error) throw error;
           if (!error) {
           console.log(rowsMembresia);
@@ -51,11 +49,11 @@ app.get('/membresias', async (req, res) => {
       }
     );
 
-  app.get('/registro', async (req,res,)=>{
+  app.get('/registro',(req,res,)=>{
 
-    const conecction = await conexion.getConnection()
+    
 
-     await conecction.query('SELECT * FROM clientes', (error, rowsClientes) => {
+     conexion.query('SELECT * FROM clientes', (error, rowsClientes) => {
         if (error) throw error;
         if (!error) {
           console.log(rowsClientes);
@@ -68,9 +66,7 @@ app.get('/membresias', async (req, res) => {
   
   app.get('/index2', async (req,res,)=>{
 
-    const conecction = await conexion.getConnection()
-
-    connection.query('SELECT * FROM clientes', (error, rows) => {
+    conexion.query('SELECT * FROM clientes', (error, rows) => {
         if (error) throw error;
         if (!error) {
           console.log(rows);
